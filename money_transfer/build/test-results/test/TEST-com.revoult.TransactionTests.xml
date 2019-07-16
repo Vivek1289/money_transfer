@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.revoult.TransactionTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-07-15T18:38:43" hostname="Lenovo-PC" time="0.021">
+  <properties/>
+  <testcase name="transfersInSameTime" classname="com.revoult.TransactionTests" time="0.02"/>
+  <testcase name="transferWhenNotEnoughFunds" classname="com.revoult.TransactionTests" time="0.0"/>
+  <testcase name="transactWithDifferentCurrencies" classname="com.revoult.TransactionTests" time="0.0"/>
+  <testcase name="transactTest" classname="com.revoult.TransactionTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

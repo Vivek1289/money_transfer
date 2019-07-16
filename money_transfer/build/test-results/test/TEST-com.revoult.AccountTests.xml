@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.revoult.AccountTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-07-15T18:38:43" hostname="Lenovo-PC" time="0.014">
+  <properties/>
+  <testcase name="testCreateAccount" classname="com.revoult.AccountTests" time="0.003"/>
+  <testcase name="testUpdateAccount" classname="com.revoult.AccountTests" time="0.008"/>
+  <testcase name="testDeleteAccount" classname="com.revoult.AccountTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

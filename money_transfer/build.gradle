@@ -1,0 +1,36 @@
+group 'com.revoult'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.sparkjava:spark-core:2.7.2'
+    compile 'com.google.code.gson:gson:2.8.2'
+
+    compile 'com.google.code.gson:gson:2.8.2'
+
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+
+
+}
+
+//create a single Jar with all dependencies
+task createJar(type: Jar) {
+    manifest {
+        attributes 'Title': 'Money Transfer Jar',
+                'Implementation-Version': version,
+                'Main-Class': 'com.revoult.Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
