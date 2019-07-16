@@ -14,9 +14,9 @@ Each account can have multiple transactions.
 Currency conversion takes place with base 
 currency as INR. Please refer below example.
 If 2 AUD needs to be converted to CAD then
-1 INR = 0.021 AUD
-1 INR = 0.019 CAD
-1 AUD = 0.019/0.021 CAD
+1 INR = 0.021 AUD, 
+1 INR = 0.019 CAD, 
+1 AUD = 0.019/0.021 CAD, 
 2 AUD = 2*(0.019/0.021) CAD
 
 In case of transaction between accounts with 
