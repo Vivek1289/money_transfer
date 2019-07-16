@@ -1,5 +1,6 @@
 package com.revoult.entity;
 
+import com.revoult.currency.Currency;
 import com.revoult.service.impl.AccountServiceImpl;
 
 import java.util.ArrayList;

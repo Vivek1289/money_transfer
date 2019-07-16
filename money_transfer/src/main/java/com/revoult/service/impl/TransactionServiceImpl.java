@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-import com.revoult.currency.CurrencyConvertor;
+import com.revoult.currency.Currency;
+import com.revoult.currency.convertor.CurrencyConvertorFactory;
 import com.revoult.entity.Account;
 import com.revoult.entity.Transaction;
 import com.revoult.entity.Transaction.Status;
@@ -30,12 +31,21 @@ public enum TransactionServiceImpl implements TransactionService {
 			transaction.setFailureReason(e.getMessage());
 			return transaction;
 		}
-		 to.addMoney(CurrencyConvertor.getConversionRate(from.getCurrency(), 
-				 to.getCurrency()) * amount);
+		 to.addMoney(getAmountToBeAdded(from.getCurrency(), to.getCurrency(), amount));
 		 transaction.setStatus(Status.SUCCESS);
 		 from.addTransactionId(transaction.getId());
 		 to.addTransactionId(transaction.getId());
 	     return transaction;
+	}
+	
+	private boolean isSameCurrency(Currency fromCurrency, Currency toCurrency) {
+		return fromCurrency.equals(toCurrency);
+	}
+	
+	private double getAmountToBeAdded(Currency fromCurrency, Currency toCurrency, double amount) {
+		return isSameCurrency(fromCurrency, toCurrency) ? amount : 
+			 CurrencyConvertorFactory.getCurrencyConvertor(IS_COMMISSION_FLAG_ON).
+			 getConvertedAmount(fromCurrency, toCurrency, amount);
 	}
 
 

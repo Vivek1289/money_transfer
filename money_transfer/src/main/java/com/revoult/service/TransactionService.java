@@ -9,8 +9,11 @@ import com.revoult.entity.Transaction;
  * @author Vivek Grewal
  */
 public interface TransactionService {
+	
+	// this flag we can put in database to enable/disable the commission
+	public static final boolean IS_COMMISSION_FLAG_ON = true;
+	
     Transaction getTransaction(String id);
-
 
     void deleteTransaction(String id);
 

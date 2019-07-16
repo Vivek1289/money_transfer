@@ -5,8 +5,33 @@ In *build/libs* will be jar file to run
 ## How to run
 `java -jar money_transfer-all-1.0-SNAPSHOT.jar`  
 url - `localhost:4567`
+
+## Assumptions
+Each user has default account with 0 INR.
+Each User has multiple accounts.
+Each account can have multiple transactions.
+  
+Currency conversion takes place with base 
+currency as INR. Please refer below example.
+If 2 AUD needs to be converted to CAD then
+1 INR = 0.021 AUD
+1 INR = 0.019 CAD
+1 AUD = 0.019/0.021 CAD
+2 AUD = 2*(0.019/0.021) CAD
+
+In case of transaction between accounts with 
+different currencies commission is charged on
+the basis of below rule.
+1) If transaction is happening on a weekday then
+no commission is charged.
+2) If transaction is happening on a weekend(Saturday/Sunday)
+0.05% commission is charged.
+3) If currency is converted into CAD and amount is greater than
+100 0.05% commission is charged.
+
+
 ## How to use
-Each user has default account with 0 INR  
+
 
 User End Points :-
 GET `/getAllUsers` - get all users  

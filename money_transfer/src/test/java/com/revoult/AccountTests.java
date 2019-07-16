@@ -4,8 +4,8 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
+import com.revoult.currency.Currency;
 import com.revoult.entity.Account;
-import com.revoult.entity.Currency;
 import com.revoult.service.AccountService;
 import com.revoult.service.impl.AccountServiceImpl;
 

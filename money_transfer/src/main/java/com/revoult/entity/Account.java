@@ -3,6 +3,7 @@ package com.revoult.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revoult.currency.Currency;
 import com.revoult.exception.TransactionException;
 
 /**
